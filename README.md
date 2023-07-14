@@ -11,11 +11,15 @@ This project focuses on utilizing Neo4j Bloom and Neo4j Aura DB to create visual
 -  List all Tom Hanks movies :
      
     MATCH (tom:Person {name: "Tom Hanks"})-[:ACTED_IN]->(tomHanksMovies) RETURN tom,tomHanksMovies
+   ![query](https://github.com/yeryeong713/Neo4j-Bloom/assets/88486391/4fcb6f67-5f22-4ceb-a16f-00892808344c)
+
 
 - Who directed "Cloud Atlas"? :
      
    MATCH (cloudAtlas {title: "Cloud Atlas"})<-[:DIRECTED]-(directors) RETURN directors.name
+![query1](https://github.com/yeryeong713/Neo4j-Bloom/assets/88486391/9f542458-3046-4e0b-b095-1def1c12db75)
 
 - How people are related to "Cloud Atlas" :
         
   MATCH (people:Person)-[relatedTo]-(:Movie {title: "Cloud Atlas"}) RETURN people.name, Type(relatedTo), relatedTo
+![query2](https://github.com/yeryeong713/Neo4j-Bloom/assets/88486391/dea69c1d-0061-4e8d-9e31-78fc8d78f72e)
